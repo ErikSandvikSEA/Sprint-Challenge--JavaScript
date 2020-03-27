@@ -42,3 +42,24 @@ console.log(cuboid.surfaceArea()); // 130
 //ES Notes - Had to comment out the entirety of prototypes.js to get classes.js to no throw an error for declaring CuboidMaker twice
 
 // Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area.
+
+class CubeMaker extends CuboidMaker{
+    constructor(attributes){
+        super(attributes)
+    }
+    cubeVolume(){
+        return this.length*this.length*this.length
+    }
+    cubeSurfaceArea(){
+        return 6 * (this.length * this.length)
+    }
+}
+
+const cube = new CubeMaker({
+    length: 3,
+    width: 3,
+    height: 3
+})
+
+console.log(cube.volume()); // 27
+console.log(cube.surfaceArea()); // 54
